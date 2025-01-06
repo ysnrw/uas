@@ -29,8 +29,42 @@ int main()
 
         getline(cin>>ws,namaBARANG[i]);
         cout<<"Harga Satuan :";
-        cin>>hargaBarang[i];
+        cin>>hargaBARANG[i];
         cout<<"Jumlah : "<<namaBARANG[i]<<"yang dibeli :";
-        cin>>jumlahBarang[i];
+        cin>>jumlahBARANG[i];
         cout<<endl;
+    }cout <<endl;
+    cout<<"----------------------------------------"<<endl;
+    cout<<"####----      Struk Mini Market ILKOOM     ----####"<<endl;
+    cout<<"----------------------------------------------"<<endl;
+    cout<<"No Barang Jumlah Harga Satuan Sub Total"<<endl;
+    for (int i=0;i<jumlahTotalBarang;i++){
+        cout<<setw(1)<<1+1<<" ";
+        cout<<left<<setw(12)<<namaBARANG[i];
+        cout<<right<<setw(15)<<jumlahBARANG[i];
+        cout<<setw(18)<<hargaBARANG[i];
+        cout<<setw(15)<<jumlahBARANG[i]*hargaBARANG[i];
+        cout<<endl;
+        totalHarga=totalHarga+(jumlahBARANG[i]*hargaBARANG[i]);
+    }
+    cout<<"--------------------------------------------------------"<<endl;
+    cout<<"TotalHarga :Rp."<<totalHarga<<endl<<endl;
+    cout<<"JumlahBayar :Rp. ";
+    cin>>jumlahBayar;
+    cout<<endl;
+
+    while(jumlahBayar-totalHarga<0){
+        cout<<"Maaf,Uang anda kurang.Mohon lakukan ulang pembayaran"<<endl;
+        cout<<"Jumlah Bayar :Rp.";
+        cin>>jumlahBayar;
+        cout<<endl;
+        cout<<"Kembalian :Rp. "<<jumlahBayar;
+        cout<<endl;
+    }
+    cout<<"Kembalian :Rp."<<jumlahBayar-totalHarga<<endl<<endl;
+    cout<<"------------------------------------------------------"<<endl;
+    cout<<"#### TerimaKasih Sudah berbelanja,datang kembali#####"<<endl;
+    cout<<"--------------------------------------------------"<<endl;
+
+    return 0;
 }
